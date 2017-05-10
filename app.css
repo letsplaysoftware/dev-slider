@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Patrick Hand SC";
+  src: url('patrickhandsc.ttf') format('truetype');
+}
+
+html, body, div, h1, h3, p {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Patrick Hand SC", sans-serif;
+  font-size: 32px;
+}
+
+div {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 50vw;
+  height: 50vh;
+}
+
+#topleft {
+  top: 0;
+  left: 0;
+  background-color: blue;
+  line-height: 50vh;
+  text-align: center;
+}
+#topright {
+  top: 0;
+  right: 0;
+  background-color: yellow;
+  line-height: 50vh;
+  text-align: center;
+}
+#bottomleft {
+  bottom: 0;
+  left: 0;
+  background-color: orange;
+  text-indent: 10vw;
+}
+#bottomright {
+  bottom: 0;
+  right: 0;
+  background-color: purple;
+}
+
+.hidden { display: none; }
