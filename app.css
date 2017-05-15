@@ -13,38 +13,51 @@ body {
   font-size: 32px;
 }
 
-div {
+section {
   position: absolute;
   padding: 0;
   margin: 0;
   width: 50vw;
   height: 50vh;
+  text-align: center;
+  display: none;
 }
 
-#topleft {
+.topleft {
   top: 0;
   left: 0;
-  background-color: blue;
-  line-height: 50vh;
-  text-align: center;
 }
-#topright {
+.topright {
   top: 0;
   right: 0;
-  background-color: yellow;
-  line-height: 50vh;
-  text-align: center;
 }
-#bottomleft {
+.bottomleft {
   bottom: 0;
   left: 0;
-  background-color: orange;
-  text-indent: 10vw;
 }
-#bottomright {
+.bottomright {
   bottom: 0;
   right: 0;
-  background-color: purple;
 }
+.titleonly {
+  width: 100vw;
+  height: 100vh;
+  font-size: 72px;
+  font-weight: bold;
+  letter-spacing: 7px;
+  line-height: 100vh;
+}
+.centered-line { line-height: 50vh; }
+.indent { text-indent: 3vw; }
+.bullets { ; }
+
+/* colors */
+.bgyellow { background-color: yellow; }
+.bggrey { background-color: grey; }
+.bgpurple { background-color: purple; }
+.bgred { background-color: red; }
+.bgblue { background-color: blue; }
+.bgorange { background-color: orange; }
 
 .hidden { display: none; }
+.show { display: block; }

@@ -1,26 +1,37 @@
-var app = a = {};
-a.elements = e = {};
-a.listeners = l = {};
-a.handlers = h  = {};
-a.utilities = u = {};
+(function(exports) {
+  e = exports;
+  e.listeners = e.l = {};
+  e.handlers = e.h = {};
+  e.state = e.s = {};
+  e.utilities = e.u = {};
 
-e.title, e.bullets = undefined;
+  var cBody;
+  var lBody = document.createElement('body');
+  var state = 'content';
 
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('hello slider thing one');
+  document.addEventListener('touchstart', function() {
+    if (event.touches.length > 2) {
+      exports.toggleLog();
+    }
+  });
 
-  e.title = document.getElementById('title');
-  e.bullets = document.getElementById('bullets');
-
-
-  document.addEventListener('keypress', l.onKeyPress);
-});
-
-l.onKeyPress = function(event) {
-  console.log(event.key);
-  if (event.key === 't') {
-    e.title.classList.remove('hidden');
-  } else if (event.key === 'b') {
-    e.bullets.classList.remove('hidden');
+  exports.log = function(args) {
+    console.log.apply(console, Array(args));
+    var el = document.createElement('li');
+    el.innerText = args;
+    lBody.append(el);
   }
-}
+
+  exports.toggleLog = function() {
+    if (state === 'content') {
+      if (!cBody) {
+        cBody = document.getElementsByTagName('body')[0];
+      }
+      cBody = cBody.parentNode.replaceChild(lBody, cBody);
+      state = 'log';
+    } else {
+      lBody = lBody.parentNode.replaceChild(cBody, lBody);
+      state = 'content';
+    }
+  }
+})(this.app = {});
